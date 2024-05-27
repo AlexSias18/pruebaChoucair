@@ -73,6 +73,10 @@ test {
     useJUnitPlatform()
     testLogging.showStandardStreams = true
     systemProperties System.getProperties()
+    systemProperty 'cucumber.filter.tags', System.getProperty('cucumber.filter.tags', '')
+}
+tasks.withType(Test) {
+    systemProperty 'cucumber.filter.tags', System.getProperty('cucumber.filter.tags', '')
 }
 
 serenity {

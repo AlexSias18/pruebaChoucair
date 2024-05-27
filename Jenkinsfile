@@ -1,12 +1,8 @@
 pipeline {
     agent any
     tools {
-        maven 'maven'
+        gradle 'gradle'
         jdk 'JDK11'
-    }
-    parameters {
-        choice(name: 'ENV', choices: ['dev', 'uat'], description: 'Seleccionar ambiente')
-        string(name: 'SCENARIO_TAG', trim: false, description: 'Tag a ejecutar')
     }
     stages {
         stage('Build'){
@@ -14,11 +10,11 @@ pipeline {
                 script{
                     if(isUnix()){
                         sh "java -version"
-                        sh "mvn clean install -DskipTests"
+                        sh "gradle init"
                     }
                     else{
                         bat "java -version"
-                        bat "mvn clean install -DskipTests"
+                        bat "gradle init"
                     }
                 }
             }
@@ -28,12 +24,12 @@ pipeline {
                 script{
                     try{
                         if(isUnix()){
-                            echo "Executing tag: ${params.SCENARIO_TAG}"
-                            sh 'mvn clean verify -Dcucumber.filter.tags="${SCENARIO_TAG}"'
+                            echo "Executing "
+                            sh 'gradle test"'
                         }
                         else {
-                            echo "Executing tag: ${params.SCENARIO_TAG}"
-                            bat 'mvn clean verify -Dcucumber.filter.tags="${params.SCENARIO_TAG}"'
+                            echo "Executing "
+                            bat 'gradle test"'
                         }
                     } finally{
                         publishReport();
