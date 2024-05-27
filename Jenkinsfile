@@ -25,11 +25,11 @@ pipeline {
                     try{
                         if(isUnix()){
                             echo "Executing "
-                            sh 'gradle test"'
+                            sh 'gradle test'
                         }
                         else {
                             echo "Executing "
-                            bat 'gradle test"'
+                            bat 'gradle test'
                         }
                     } finally{
                         publishReport();
