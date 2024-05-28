@@ -36,7 +36,6 @@ public class InicioSteps {
     @Step("Abrir pagina")
     public void open(){
        inicioPage.openUrl("https://www.exito.com/");
-       screenShotAddCucumber();
     }
 
     @Step("Elegir categoria")
@@ -70,6 +69,7 @@ public class InicioSteps {
             if (inicioPage.cerrarModal.isCurrentlyVisible()){
                 implicitlyWait(3);
                 inicioPage.cerrarModal.click();
+                screenShotAddCucumber();
             }
             if (producto.isCurrentlyVisible()){
                 if (inicioPage.cerrarModal.isCurrentlyVisible()){
@@ -81,6 +81,7 @@ public class InicioSteps {
                 producto.waitUntilVisible();
                 producto.waitUntilClickable();
                 producto.click();
+                screenShotAddCucumber();
             }
             implicitlyWait(5);
             for (int j = 0; j < randomCantidad; j++) {
@@ -92,6 +93,7 @@ public class InicioSteps {
                 cantidad2.waitUntilVisible();
                 cantidad2.waitUntilClickable();
                 cantidad2.click();
+                screenShotAddCucumber();
                 implicitlyWait(5);
             }
             implicitlyWait(5);
