@@ -42,11 +42,11 @@ pipeline {
 
     def publishReport(){
         publishHTML(target: [
-            reportName: 'Serenity Report',
-            reportDir: 'target/site/serenity',
-            reportFiles: 'index.html',
+            reportName: 'Cucumber Report',
+            reportDir: 'target/cucumber',
+            reportFiles: 'cucumber-report.html',
             keepAll: true,
-            alwaysLinkToLastBuild: true,
-            allowMissing: false
+            alwaysLinkToLastBuild: false,
+            allowMissing: true
         ])
     }

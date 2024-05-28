@@ -43,11 +43,11 @@ public class InicioSteps {
     public void elegirCategoria() throws InterruptedException {
         inicioPage.burgerMenuBtn.click();
         implicitlyWait(5);
+        screenShotAddCucumber();
         inicioPage.categoryBtn.click();
         implicitlyWait(5);
         screenShotAddCucumber();
         inicioPage.subCategoryBtn.click();
-        screenShotAddCucumber();
 
     }
 
@@ -75,6 +75,7 @@ public class InicioSteps {
                 if (inicioPage.cerrarModal.isCurrentlyVisible()){
                     implicitlyWait(3);
                     inicioPage.cerrarModal.click();
+                    screenShotAddCucumber();
                 }
                 Utils.saveVariableOnSession("nombre"+i,nombre.getText());
                 producto.waitUntilVisible();

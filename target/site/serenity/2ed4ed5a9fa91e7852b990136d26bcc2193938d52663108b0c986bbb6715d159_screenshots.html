@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="b0b263209b51c95cbc77a75da7a49c450dc3d0c92ec16d5f8872a9c3d1eaeea8.html">A&ntilde;adir Productos Exito</a></span>
+                > <span class="truncate-60"><a
+                    href="2ed4ed5a9fa91e7852b990136d26bcc2193938d52663108b0c986bbb6715d159.html">A&ntilde;adir productos Exito </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 27-05-2024 21:23</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Añadir Productos Exito </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="777d86591e0998559c7b241b9619475a3b220f2ea3c9c6437f99be4140c64431.html">Test1
+                                    (tag)</a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="7fabbe948ac86c3fd529587204104664d35be88c0bef24282ebd85d2dbb6d58f.html">Testfeature
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">A&ntilde;adir productos Exito
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="c3371dd34597a308e0a54a271e747e240e684fff23d770818f81f0a33fb11739.png" title=" Dado que me encuentro en la p&aacute;gina de login de Exito" width="1920"/>
+                <img src="c3371dd34597a308e0a54a271e747e240e684fff23d770818f81f0a33fb11739.png" title=" Abrir pagina" width="1920"/>
+                <img src="c3371dd34597a308e0a54a271e747e240e684fff23d770818f81f0a33fb11739.png" title=" Dado que me encuentro en la p&aacute;gina de login de Exito (completed)" width="1920"/>
+                <img src="1f5cd8c20ccecbdedeee88b6c7eeafbbce6255ff771536b8f80a4dae801866c7.png" title=" Cuando selecciono una categoria y subcategoria" width="1920"/>
+                <img src="1f5cd8c20ccecbdedeee88b6c7eeafbbce6255ff771536b8f80a4dae801866c7.png" title=" Elegir categoria" width="1920"/>
+                <img src="b97d605d698486449e07b3b6003e331bfdd74b012f53d8ca8adc4dfaed532ad8.png" title=" Elegir categoria" width="1920"/>
+                <img src="b94f4c7f27ce2600c8d7a60886d03630ca10d3d811a73488db0d90f94bc26f50.png" title=" Elegir categoria" width="1920"/>
+                <img src="c434edb54797de49bfd2f10d5ce2446ffef07a1503b62c2cdd8bf270286c32c0.png" title=" Elegir categoria" width="1920"/>
+                <img src="68d729e3562f1d316dc7df2d0ff7942cff1d5ea56ee25ca119f47b34526e00fa.png" title=" Elegir categoria (completed)" width="1920"/>
+                <img src="68d729e3562f1d316dc7df2d0ff7942cff1d5ea56ee25ca119f47b34526e00fa.png" title=" Cuando selecciono una categoria y subcategoria (completed)" width="1920"/>
+                <img src="54dd7769488c1291df4dc46a1cf1153cf2ea914b954992d46eec00469afa8df0.png" title=" Y seleccione cinco productos con cantidades aleatorias" width="1920"/>
+                <img src="54dd7769488c1291df4dc46a1cf1153cf2ea914b954992d46eec00469afa8df0.png" title=" Elegir productos" width="1920"/>
+                <img src="b52ac3e919c3911a0bbe58ccedec2072e984ab6e7f15cec3802e164f33f3b7ef.png" title=" Elegir productos" width="1920"/>
+                <img src="c8eada8acd7020025af8a4959214a317f58e312bc14b9dea12c3424f54e3783a.png" title=" Elegir productos" width="1920"/>
+                <img src="5f3abaeab0c4f835883f6c37fb93ff6e0d0b1b3872efadb7aa98fcc05b691638.png" title=" Elegir productos" width="1920"/>
+                <img src="361ce498896d58aa2f43a6f3df107d0ee42dddc86ba7d0cb80eb2f88f0598581.png" title=" Elegir productos" width="1920"/>
+                <img src="fbb20785709d575a62345dd1f76977fe18e72531db5b0291aa6a123f139c40d7.png" title=" Elegir productos" width="1920"/>
+                <img src="583750dbe82bfa662fcd1e7a726c332ad07abf3f133075d9e91c1cc46f4ff0b7.png" title=" Elegir productos" width="1920"/>
+                <img src="ab002bb7c3ae654f40612d276d6ba725ffed5eff2a41c6559f692477cafd20d6.png" title=" Elegir productos" width="1920"/>
+                <img src="9f7f1e735c56cb9a4aa92e9bf15096f90f70df3bf293b2581a9d935cc6ac9c5c.png" title=" Elegir productos" width="1920"/>
+                <img src="dc1cea370f8c670c22642117e903a53cab0f95709c56d43c2a22bf9db3e43d67.png" title=" Elegir productos" width="1920"/>
+                <img src="9e54ae9cf66b301ea7914a261729b8d73ecce7f9250f0e3b88b80be0ec27f8a3.png" title=" Elegir productos" width="1920"/>
+                <img src="c32dd6ab4645b9c7cd92671e4d91b2886ed223d8f45875e957ee303f42c8b96b.png" title=" Elegir productos" width="1920"/>
+                <img src="e5b34d3332aa47c46e8285da916f7cf5f1b5a4f27456cef1af7ad4d076a8de56.png" title=" Elegir productos" width="1920"/>
+                <img src="deaa3fd3f711facb3a37fd0eeb0cad2310b2809f2942e7cea302a9196f0062d1.png" title=" Elegir productos" width="1920"/>
+                <img src="0dae7784230494e6c69c781014ffc55501ac90f06f16b0d8f7139655f02cc6d9.png" title=" Elegir productos" width="1920"/>
+                <img src="d98e7fdb89686a5ef2a7b3a2240400d83354425cadf3422f0105be7a57fc6dee.png" title=" Elegir productos" width="1920"/>
+                <img src="636bf1d7e841f01f78dda18e07d9dd27b48afd82c921d613f44a73215f02f342.png" title=" Elegir productos (completed)" width="1920"/>
+                <img src="636bf1d7e841f01f78dda18e07d9dd27b48afd82c921d613f44a73215f02f342.png" title=" Y seleccione cinco productos con cantidades aleatorias (completed)" width="1920"/>
+                <img src="636bf1d7e841f01f78dda18e07d9dd27b48afd82c921d613f44a73215f02f342.png" title=" Entonces realizo las validaciones necesarias" width="1920"/>
+                <img src="636bf1d7e841f01f78dda18e07d9dd27b48afd82c921d613f44a73215f02f342.png" title=" Validar productos: <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.3.4</span>
+</div>
+</body>
+</html>
