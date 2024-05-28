@@ -69,13 +69,11 @@ public class InicioSteps {
             if (inicioPage.cerrarModal.isCurrentlyVisible()){
                 implicitlyWait(3);
                 inicioPage.cerrarModal.click();
-                screenShotAddCucumber();
             }
             if (producto.isCurrentlyVisible()){
                 if (inicioPage.cerrarModal.isCurrentlyVisible()){
                     implicitlyWait(3);
                     inicioPage.cerrarModal.click();
-                    screenShotAddCucumber();
                 }
                 Utils.saveVariableOnSession("nombre"+i,nombre.getText());
                 producto.waitUntilVisible();
