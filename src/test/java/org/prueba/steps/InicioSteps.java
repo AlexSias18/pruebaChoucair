@@ -55,7 +55,7 @@ public class InicioSteps {
         Random random = new Random();
         Set<Integer> numerosSet = new HashSet<>();
         while (numerosSet.size() < 3) {
-            int numero = random.nextInt(8) + 1;
+            int numero = random.nextInt(6) + 1;
             if (numero != 2) {
                 numerosSet.add(numero);
             }
@@ -66,6 +66,7 @@ public class InicioSteps {
             implicitlyWait(5);
             WebElementFacade producto = inicioPage.findBy("//*[@id='__next']/main/section[3]/div/div[2]/div[2]/div[2]/ul/li["+numerosArray[i]+"]/article/section/div[2]/div[2]/button");
             WebElementFacade nombre = inicioPage.findBy("//*[@id='__next']/main/section[3]/div/div[2]/div[2]/div[2]/ul/li["+numerosArray[i]+"]/article/section/div[1]/div/h3/a");
+            WebElementFacade vendedor= inicioPage.findBy("//*[@id='__next']/main/section[3]/div/div[2]/div[2]/div[2]/ul/li["+numerosArray[i]+"]/article/section/div[2]/div[1]/div[1]/div[2]/div[1]");
             if (inicioPage.cerrarModal.isCurrentlyVisible()){
                 implicitlyWait(3);
                 inicioPage.cerrarModal.click();
@@ -107,13 +108,15 @@ public class InicioSteps {
             int variable= i-1;
             String producto1= getVariableOnSession("nombre"+variable);
             implicitlyWait(3);
-            WebElementFacade nombre = inicioPage.findBy("//*[@id=\"render-store.custom.checkout-io\"]/div/div[1]/div/div[1]/div/div/div/div[2]/div[3]/div[1]/div/div[2]/div["+i+"]/div/div[4]/span");
-            WebElementFacade productosCantidad = inicioPage.findBy("//*[@id=\"render-store.custom.checkout-io\"]/div/div[1]/div/div[1]/div/div/div/div[2]/div[3]/div[1]/div/div[3]");
+            WebElementFacade nombre = inicioPage.findBy("//*[@id=\"render-store.custom.checkout-io\"]/div/div[1]/div/div[1]/div/div/div/div[2]/div[4]/div[1]/div/div[2]/div["+i+"]/div/div[4]/span");
             String productocarrito= nombre.getText();
             implicitlyWait(3);
-            Assert.assertEquals("3",productosCantidad.getText().substring(0,1));
             Assert.assertEquals(producto1,productocarrito);
         }
+        implicitlyWait(3);
+        WebElementFacade productosCantidad = inicioPage.findBy("//*[@id=\"render-store.custom.checkout-io\"]/div/div[1]/div/div[1]/div/div/div/div[2]/div[4]/div[1]/div/div[3]");
+        Assert.assertEquals("3",productosCantidad.getText().substring(0,1));
+
     }
 
 }

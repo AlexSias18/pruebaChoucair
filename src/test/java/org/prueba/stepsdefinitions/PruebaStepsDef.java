@@ -34,8 +34,8 @@ public class PruebaStepsDef {
         inicioSteps.elegirCategoria();
     }
     @Y("seleccione cinco productos con cantidades aleatorias")
-    public void seleccioneCincoProductosConCantidadesAleatorias() throws InterruptedException {
-        inicioSteps.elegirProductos();
+        public void seleccioneCincoProductosConCantidadesAleatorias() throws InterruptedException {
+            inicioSteps.elegirProductos();
     }
 
     @Entonces("realizo las validaciones necesarias")
